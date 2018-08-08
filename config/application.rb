@@ -15,5 +15,18 @@ module Ocazia
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    #
+
+    config.generators do |g|
+      # g.test_framework :rspec, fixture: true, views: false
+      # g.integration_tool :rspec, fixture: true, views: false
+      # g.javascript_engine :coffee
+      # g.orm :active_record
+      # g.stylesheet_engine :scss
+      g.template_engine :slim
+      g.helper = false
+      g.stylesheets = false
+      g.javascripts = false
+    end
   end
 end
