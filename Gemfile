@@ -11,6 +11,8 @@ gem 'mysql2'
 gem 'slim-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'bootstrap', '~> 4.1.3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
