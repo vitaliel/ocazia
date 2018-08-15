@@ -6,4 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: 'admin@example.com', password: '123123123a')
+f1 = Function.find_or_create_by!(name: 'Driver')
+
+email = 'admin@example.com'
+user = User.where(email: email).first
+user ||= User.create!(
+  last_name: 'Popușoi',
+  first_name: 'Ion',
+  email: email,
+  password: 'q123q123',
+  role: :admin,
+  function_id: f1.id
+)
+
+vtype = VehicleType.find_or_create_by!(name: 'Самосвалы')
+vnumber = 'BSE099'
+
+vehicle = Vehicle.where(vnumber: vnumber)
+vehicle ||= Vehicle.create(
+  driver: user,
+  vehicle_type: vtype,
+  engine_vol: 4400,
+  model: 'IVECO 420',
+  vnumber: 'BSE099'
+)

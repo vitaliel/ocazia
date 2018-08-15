@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class VehicleDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,19 +8,14 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    driver: Field::BelongsTo.with_options(class_name: "User"),
+    vehicle_type: Field::BelongsTo.with_options(class_name: "VehicleType"),
     id: Field::Number,
-    email: Field::String,
-    last_name: Field::String,
-    first_name: Field::String,
-    encrypted_password: Field::String,
-    reset_password_token: Field::String,
-    reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
-    sign_in_count: Field::Number,
-    current_sign_in_at: Field::DateTime,
-    last_sign_in_at: Field::DateTime,
-    current_sign_in_ip: Field::String,
-    last_sign_in_ip: Field::String,
+    model: Field::String,
+    vnumber: Field::String,
+    type_id: Field::Number,
+    engine_vol: Field::Number,
+    driver_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -32,21 +27,20 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :email,
-    :last_sign_in_at,
-    :sign_in_count
+    :model,
+    :driver,
+    :vehicle_type,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :driver,
+    :vehicle_type,
     :id,
-    :email,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
+    :model,
+    :vnumber,
+    :engine_vol,
     :created_at,
     :updated_at,
   ].freeze
@@ -55,13 +49,17 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email,
+    :vehicle_type,
+    :model,
+    :vnumber,
+    :driver,
+    :engine_vol,
   ].freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how vehicles are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(user)
-    "#{user.last_name} #{user.first_name}"
-  end
+  # def display_resource(vehicle)
+  #   "Vehicle ##{vehicle.id}"
+  # end
 end

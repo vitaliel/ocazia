@@ -2,6 +2,9 @@
 Rails.application.routes.draw do
   namespace :admin do
       resources :users
+      resources :functions
+      resources :vehicles
+      resources :vehicle_types
 
       root to: "users#index"
     end
