@@ -31,8 +31,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
+    :last_sign_in_at,
+    :sign_in_count
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,10 +40,6 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
     :sign_in_count,
     :current_sign_in_at,
     :last_sign_in_at,
@@ -58,15 +54,6 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
