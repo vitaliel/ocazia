@@ -18,7 +18,7 @@ class VehicleDashboard < Administrate::BaseDashboard
     engine_vol: Field::Number,
     driver_id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,38 +26,38 @@ class VehicleDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :id,
-    :model,
-    :vnumber,
-    :driver,
-    :vehicle_type,
-    :gps_tracker_id
+  COLLECTION_ATTRIBUTES = %i[
+    id
+    model
+    vnumber
+    driver
+    vehicle_type
+    gps_tracker_id
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :driver,
-    :vehicle_type,
-    :model,
-    :vnumber,
-    :engine_vol,
-    :created_at,
-    :updated_at,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    id
+    driver
+    vehicle_type
+    model
+    vnumber
+    engine_vol
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :vehicle_type,
-    :model,
-    :vnumber,
-    :driver,
-    :engine_vol,
-    :gps_tracker_id
+  FORM_ATTRIBUTES = %i[
+    vehicle_type
+    model
+    vnumber
+    driver
+    engine_vol
+    gps_tracker_id
   ].freeze
 
   # Overwrite this method to customize how vehicles are displayed

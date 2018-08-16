@@ -43,6 +43,6 @@ class LocationLog < ApplicationRecord
     degree = str[0..2].to_i
     minutes = str[3..4].to_i
     seconds = str[5..6].to_i
-    degree + (minutes + seconds/100.0) / 60
+    degree + (minutes + seconds / 100.0) / 60
   end
 end

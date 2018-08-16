@@ -1,0 +1,32 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - vendor/**/*
+    - bin/*
+    - node_modules/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'
+
+Metrics/LineLength:
+  Exclude:
+    - 'config/**/*.rb'
+  Max: 130
+
+# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
+# SupportedStyles: single_quotes, double_quotes
+Style/StringLiterals:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

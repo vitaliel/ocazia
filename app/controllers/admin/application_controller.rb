@@ -12,7 +12,7 @@ module Admin
     def authenticate_admin
       unless current_user.admin?
         redirect_to root_path, notice: "Not allowed"
-        return false
+        false
       end
     end
 

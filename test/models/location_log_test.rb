@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LocationLogTest < ActiveSupport::TestCase
   test "update_vehicle_location" do
-    gps_tracker_id = 62109
+    gps_tracker_id = 62_109
     type = VehicleType.create(name: 'Bus')
     func = Function.create(name: 'Driver')
     driver = User.create(
@@ -10,7 +10,7 @@ class LocationLogTest < ActiveSupport::TestCase
       first_name: 'Ion',
       last_name: 'Ciocan',
       password: '123456',
-     function_id: func.id
+      function_id: func.id
     )
     bus = Vehicle.create(
       vehicle_type: type,

@@ -24,7 +24,7 @@ class UserDashboard < Administrate::BaseDashboard
     current_sign_in_ip: Field::String,
     last_sign_in_ip: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -32,39 +32,39 @@ class UserDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :id,
-    :last_name,
-    :first_name,
-    :email,
-    :last_sign_in_at,
-    :sign_in_count
+  COLLECTION_ATTRIBUTES = %i[
+    id
+    last_name
+    first_name
+    email
+    last_sign_in_at
+    sign_in_count
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :email,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :created_at,
-    :updated_at,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    id
+    email
+    sign_in_count
+    current_sign_in_at
+    last_sign_in_at
+    current_sign_in_ip
+    last_sign_in_ip
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :email,
-    :last_name,
-    :first_name,
-    :password,
-    :password_confirmation,
-    :function
+  FORM_ATTRIBUTES = %i[
+    email
+    last_name
+    first_name
+    password
+    password_confirmation
+    function
   ].freeze
 
   # Overwrite this method to customize how users are displayed
