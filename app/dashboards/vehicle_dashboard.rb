@@ -11,6 +11,7 @@ class VehicleDashboard < Administrate::BaseDashboard
     driver: Field::BelongsTo.with_options(class_name: "User"),
     vehicle_type: Field::BelongsTo.with_options(class_name: "VehicleType"),
     id: Field::Number,
+    gps_tracker_id: Field::Number,
     model: Field::String,
     vnumber: Field::String,
     type_id: Field::Number,
@@ -28,16 +29,18 @@ class VehicleDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :model,
+    :vnumber,
     :driver,
     :vehicle_type,
+    :gps_tracker_id
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :id,
     :driver,
     :vehicle_type,
-    :id,
     :model,
     :vnumber,
     :engine_vol,
@@ -54,12 +57,13 @@ class VehicleDashboard < Administrate::BaseDashboard
     :vnumber,
     :driver,
     :engine_vol,
+    :gps_tracker_id
   ].freeze
 
   # Overwrite this method to customize how vehicles are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(vehicle)
-  #   "Vehicle ##{vehicle.id}"
-  # end
+  def display_resource(vehicle)
+    "Vehicle ##{vehicle.vnumber}"
+  end
 end

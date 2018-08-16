@@ -30,3 +30,5 @@ vehicle ||= Vehicle.create(
   model: 'IVECO 420',
   vnumber: 'BSE099'
 )
+
+VehicleLocation.create(vehicle: vehicle, lat: 47.04469, lng: 28.8203, speed: 1200)
