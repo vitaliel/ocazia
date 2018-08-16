@@ -6,6 +6,8 @@ AllCops:
     - vendor/**/*
     - bin/*
     - node_modules/**/*
+    - config/initializers/simple_form_bootstrap.rb
+    - test/test_helper.rb
 
 Metrics/BlockLength:
   Exclude:
