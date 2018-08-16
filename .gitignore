@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/.rake_tasks
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

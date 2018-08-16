@@ -10,9 +10,11 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     email: Field::String,
+    password: Field::Password,
+    password_confirmation: Field::Password,
     last_name: Field::String,
     first_name: Field::String,
-    encrypted_password: Field::String,
+    function: Field::BelongsTo,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
     remember_created_at: Field::DateTime,
@@ -32,6 +34,8 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
+    :last_name,
+    :first_name,
     :email,
     :last_sign_in_at,
     :sign_in_count
@@ -56,6 +60,11 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :email,
+    :last_name,
+    :first_name,
+    :password,
+    :password_confirmation,
+    :function
   ].freeze
 
   # Overwrite this method to customize how users are displayed
